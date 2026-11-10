@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Mom's OG · Pub & Kitchen · Gainesville</title>
+<meta name="description" content="Wings, burgers, pub classics and cold beer on W University Ave, Gainesville. Open 7:30 AM to 2 AM every day.">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0d1f17; --ink2:#14301f; --board:#183a28;
+  --mustard:#f4b52c; --tomato:#e2462b; --cream:#fbf3e2; --paper:#f6ecd6;
+  --muted:#b9c7bd; --line:rgba(251,243,226,.14);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--cream);font-family:'DM Sans',system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+h1,h2,h3,.disp{font-family:'Anton',Impact,sans-serif;font-weight:400;letter-spacing:.01em;text-transform:uppercase;line-height:.95}
+.hand{font-family:'Caveat',cursive;color:var(--mustard);font-size:1.6rem;line-height:1}
+section{scroll-margin-top:68px}
+
+/* preview banner */
+.pv{background:var(--mustard);color:var(--ink);text-align:center;font-size:.8rem;font-weight:700;padding:7px 12px;letter-spacing:.04em}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(13,31,23,.92);backdrop-filter:blur(8px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+header.sc{border-color:var(--line);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:20px}
+.logo{display:flex;align-items:baseline;gap:10px;text-decoration:none}
+.logo b{font-family:'Anton';font-weight:400;font-size:1.7rem;letter-spacing:.02em}
+.logo b i{font-style:normal;color:var(--mustard)}
+.logo span{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.links{display:flex;gap:26px;font-size:.92rem;font-weight:500}
+.links a{text-decoration:none;opacity:.85;transition:opacity .2s,color .2s}
+.links a:hover{opacity:1;color:var(--mustard)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--mustard);color:var(--ink);font-weight:700;text-decoration:none;padding:12px 20px;border-radius:999px;font-size:.95rem;transition:transform .2s,background .2s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px);background:#ffc544}
+.btn.ghost{background:transparent;color:var(--cream);border:1.5px solid rgba(251,243,226,.5)}
+.btn.ghost:hover{border-color:var(--cream);background:rgba(251,243,226,.06)}
+@media(max-width:860px){.links{display:none}.logo span{display:none}}
+
+/* hero */
+.hero{position:relative;min-height:calc(100vh - 96px);min-height:calc(100svh - 96px);display:flex;align-items:flex-end;overflow:hidden}
+.hero .bg{position:absolute;inset:0;background:url(photos/interior.jpg) center/cover;transform:scale(1.08);animation:zoom 2.2s cubic-bezier(.2,.7,.2,1) forwards}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,31,23,.35) 0%,rgba(13,31,23,.55) 45%,var(--ink) 100%)}
+@keyframes zoom{to{transform:scale(1)}}
+.hero .wrap{position:relative;z-index:2;padding-bottom:64px;padding-top:120px;width:100%}
+.status{display:inline-flex;align-items:center;gap:9px;background:rgba(13,31,23,.7);border:1px solid var(--line);padding:7px 14px;border-radius:999px;font-size:.85rem;font-weight:500}
+.dot{width:9px;height:9px;border-radius:50%;background:#5fd38a;box-shadow:0 0 0 0 rgba(95,211,138,.6);animation:pulse 2s infinite}
+.dot.off{background:var(--tomato);animation:none}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(95,211,138,0)}100%{box-shadow:0 0 0 0 rgba(95,211,138,0)}}
+.hero h1{font-size:clamp(3.2rem,9.5vw,8rem);margin:22px 0 18px;max-width:11ch}
+.hero h1 em{font-style:normal;color:var(--mustard)}
+.hero p.lead{font-size:clamp(1.05rem,1.6vw,1.25rem);max-width:520px;color:#e6ece7}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.meta{display:flex;flex-wrap:wrap;gap:22px;margin-top:34px;font-size:.9rem;color:var(--muted)}
+.meta strong{color:var(--cream)}
+.stars{color:var(--mustard);letter-spacing:2px}
+.load{opacity:0;transform:translateY(18px);animation:up .8s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(.25s + var(--i,0)*.12s)}
+@keyframes up{to{opacity:1;transform:none}}
+
+/* ticker */
+.ticker{background:var(--tomato);color:var(--cream);overflow:hidden;white-space:nowrap;border-block:2px solid var(--ink)}
+.ticker .row{display:inline-flex;gap:0;animation:tick 38s linear infinite;padding:14px 0}
+.ticker span{font-family:'Anton';text-transform:uppercase;font-size:1.25rem;letter-spacing:.03em;padding:0 22px}
+.ticker span::after{content:"★";color:var(--mustard);margin-left:44px;font-size:.9rem;vertical-align:middle}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* section heads */
+.sec{padding:110px 0}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:46px}
+.head h2{font-size:clamp(2.6rem,6vw,4.6rem)}
+.head p{max-width:420px;color:var(--muted)}
+.kicker{display:block;margin-bottom:10px}
+
+/* wings */
+.wings{background:var(--board);position:relative;overflow:hidden}
+.wings::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 15% 20%,rgba(255,255,255,.05),transparent 40%),radial-gradient(circle at 85% 80%,rgba(255,255,255,.04),transparent 45%);pointer-events:none}
+.wgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;position:relative}
+.ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.rung{border:1.5px dashed rgba(251,243,226,.3);border-radius:14px;padding:20px 16px;text-align:center;transition:transform .25s,border-color .25s,background .25s}
+.rung:hover{transform:translateY(-4px);border-color:var(--mustard);background:rgba(244,181,44,.06)}
+.rung .n{font-family:'Anton';font-size:2.6rem;line-height:1}
+.rung .n small{font-family:'DM Sans';font-size:.8rem;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;display:block;margin-top:4px}
+.rung .p{font-family:'Caveat';font-weight:700;font-size:1.7rem;color:var(--mustard);margin-top:6px}
+.rung.big{border-style:solid;border-color:var(--mustard)}
+.flavors{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.flavors span{background:var(--ink);border:1px solid var(--line);padding:8px 14px;border-radius:999px;font-size:.88rem;font-weight:500}
+.wcopy h2{font-size:clamp(2.8rem,6.5vw,5.2rem)}
+.wcopy p{color:#d6dfd9;margin-top:18px;max-width:440px}
+.note{font-size:.85rem;color:var(--muted);margin-top:14px}
+
+/* favorites */
+.favs{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.fav{position:relative;border-radius:18px;overflow:hidden;background:var(--ink2);aspect-ratio:4/5}
+.fav.wide{grid-column:span 2;aspect-ratio:auto}
+.fav img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.fav:hover img{transform:scale(1.06)}
+.fav figcaption{position:absolute;left:0;right:0;bottom:0;padding:50px 18px 16px;background:linear-gradient(transparent,rgba(13,31,23,.92));display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+.fav figcaption b{font-family:'Anton';font-weight:400;text-transform:uppercase;font-size:1.3rem;line-height:1.05}
+.fav figcaption span{font-family:'Caveat';font-weight:700;color:var(--mustard);font-size:1.5rem;white-space:nowrap}
+@media(max-width:900px){.favs{grid-template-columns:1fr 1fr}.fav.wide{grid-column:span 2;aspect-ratio:16/10}}
+
+/* menu */
+.menu{background:var(--paper);color:var(--ink)}
+.menu .head p{color:#4c5c52}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px}
+.tab{font:inherit;font-weight:700;font-size:.92rem;background:transparent;border:1.5px solid rgba(13,31,23,.25);color:var(--ink);padding:10px 18px;border-radius:999px;cursor:pointer;transition:all .2s}
+.tab:hover{border-color:var(--ink)}
+.tab.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.items{display:grid;grid-template-columns:1fr 1fr;gap:6px 56px}
+.item{display:flex;gap:16px;padding:18px 0;border-bottom:1px dashed rgba(13,31,23,.22);animation:fade .45s both}
+.item:nth-child(2n){animation-delay:.05s}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.item img{width:68px;height:68px;border-radius:12px;object-fit:cover;flex:none}
+.item .t{flex:1}
+.item .r{display:flex;justify-content:space-between;gap:14px;align-items:baseline}
+.item h4{font-size:1.06rem;font-weight:700}
+.item .pr{font-family:'Anton';font-size:1.15rem;color:var(--tomato)}
+.item p{font-size:.9rem;color:#4c5c52;margin-top:4px}
+.tag{display:inline-block;background:var(--mustard);color:var(--ink);font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:6px;margin-left:8px;vertical-align:2px}
+@media(max-width:760px){.items{grid-template-columns:1fr}}
+
+/* game day */
+.game{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--ink2)}
+.game .ph{min-height:460px;background:url(photos/bar.jpg) center/cover}
+.game .tx{padding:80px 60px;display:flex;flex-direction:column;justify-content:center}
+.game h2{font-size:clamp(2.6rem,5.5vw,4.4rem)}
+.game p{color:#d6dfd9;margin-top:18px;max-width:440px}
+.feats{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px}
+.feats div{border-left:3px solid var(--mustard);padding-left:14px}
+.feats b{display:block;font-size:1rem}
+.feats span{font-size:.88rem;color:var(--muted)}
+@media(max-width:860px){.game{grid-template-columns:1fr}.game .ph{min-height:300px}.game .tx{padding:60px 24px}}
+
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rev{background:var(--ink2);border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:16px}
+.rev q{font-size:1.06rem;quotes:none}
+.rev cite{font-style:normal;font-size:.88rem;color:var(--muted);margin-top:auto}
+@media(max-width:860px){.revs{grid-template-columns:1fr}}
+
+/* visit */
+.visit{background:var(--board)}
+.vgrid{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.hours{list-style:none}
+.hours li{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-size:1rem}
+.hours li.today{color:var(--mustard);font-weight:700}
+.hours li.today span:first-child::after{content:" · today";font-weight:500;font-size:.85rem}
+.vbox h3{font-size:2rem;margin-bottom:16px}
+.vbox p{color:#d6dfd9}
+.vbox .big{font-family:'Anton';font-size:clamp(1.8rem,4vw,2.6rem);display:block;margin:6px 0 2px;text-decoration:none}
+.vbox .big:hover{color:var(--mustard)}
+.vbox .row{margin-bottom:28px}
+.vbox .lbl{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+@media(max-width:860px){.vgrid{grid-template-columns:1fr}.wgrid{grid-template-columns:1fr;gap:40px}}
+
+footer{padding:40px 0;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .rv,.load{opacity:1;transform:none}.hero .bg{transform:none}}
+@media(max-width:560px){.wrap{padding:0 16px}.sec{padding:80px 0}.ladder{grid-template-columns:repeat(2,1fr)}.feats{grid-template-columns:1fr}.btn{padding:11px 16px}}
+</style>
+</head>
+<body>
+
+<div class="pv">Preview · a sample website made for Mom's OG</div>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a class="logo" href="#top"><b>Mom's <i>OG</i></b><span>Pub &amp; Kitchen</span></a>
+    <nav class="links">
+      <a href="#wings">Wings</a>
+      <a href="#favorites">Favorites</a>
+      <a href="#menu">Menu</a>
+      <a href="#gameday">Game Day</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a class="btn" href="tel:+13523788135">Call (352) 378-8135</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="bg"></div>
+  <div class="wrap">
+    <div class="status load" style="--i:0"><span class="dot" id="dot"></span><span id="open">Open daily 7:30 AM to 2 AM</span></div>
+    <h1 class="load" style="--i:1">Wings, beer &amp; <em>a seat</em> for the game.</h1>
+    <p class="lead load" style="--i:2">Comfort food the way Mom made it, plus a cold one and every game on. Right on W University Ave, open until 2 AM every night.</p>
+    <div class="cta load" style="--i:3">
+      <a class="btn" href="#menu">See the menu</a>
+      <a class="btn ghost" href="https://www.google.com/maps/dir/?api=1&destination=Mom%27s+OG+1017+W+University+Ave+Gainesville+FL" target="_blank" rel="noopener">Get directions</a>
+    </div>
+    <div class="meta load" style="--i:4">
+      <span><span class="stars">★</span> <strong>4.4</strong> on Google · 224 reviews</span>
+      <span><strong>1017 W University Ave</strong> · Gainesville</span>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div class="row" id="tk"></div></div>
+
+<section class="sec wings" id="wings">
+  <div class="wrap wgrid">
+    <div class="wcopy rv">
+      <span class="hand kicker">the house specialty</span>
+      <h2>Wings by the 5.<br>Or by the 50.</h2>
+      <p>Crispy outside, juicy inside, tossed in your sauce of choice. Grab five for yourself or fifty for the whole group chat.</p>
+      <div class="flavors">
+        <span>Buffalo</span><span>Lemon Pepper</span><span>Teriyaki</span><span>+ ask about today's sauces</span>
+      </div>
+    </div>
+    <div class="rv" style="--d:.12s">
+      <div class="ladder">
+        <div class="rung"><div class="n">5<small>wings</small></div><div class="p">$9</div></div>
+        <div class="rung"><div class="n">10<small>wings</small></div><div class="p">$16</div></div>
+        <div class="rung"><div class="n">20<small>wings</small></div><div class="p">$30</div></div>
+        <div class="rung"><div class="n">30<small>wings</small></div><div class="p">$40</div></div>
+        <div class="rung"><div class="n">40<small>wings</small></div><div class="p">$50</div></div>
+        <div class="rung big"><div class="n">50<small>wings</small></div><div class="p">$60</div></div>
+      </div>
+      <p class="note">Ordering for a watch party? Call ahead and we'll have them hot when you walk in.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="favorites">
+  <div class="wrap">
+    <div class="head rv">
+      <div><span class="hand kicker">straight from the kitchen</span><h2>Regulars' favorites</h2></div>
+      <p>Hearty plates that actually fill you up. Every burger and sandwich comes with fries or tots.</p>
+    </div>
+    <div class="favs">
+      <figure class="fav rv"><img src="photos/burger.jpg" alt="Mom's Burger with fries" loading="lazy"><figcaption><b>Mom's Burger</b><span>$13</span></figcaption></figure>
+      <figure class="fav rv" style="--d:.08s"><img src="photos/chicken-sandwich.jpg" alt="Chicken sandwich with fries" loading="lazy"><figcaption><b>Chicken Sandwich</b><span>$13</span></figcaption></figure>
+      <figure class="fav rv" style="--d:.16s"><img src="photos/fish-chips.jpg" alt="Beer battered fish and chips" loading="lazy"><figcaption><b>Fish &amp; Chips</b><span>$14</span></figcaption></figure>
+      <figure class="fav rv" style="--d:.24s"><img src="photos/zucchini-fries.jpg" alt="Zucchini fries basket" loading="lazy"><figcaption><b>Zucchini Fries</b><span>$12</span></figcaption></figure>
+      <figure class="fav wide rv"><img src="photos/bangers-mash.jpg" alt="Bangers and mash with onion gravy" loading="lazy"><figcaption><b>Bangers &amp; Mash</b><span>$14</span></figcaption></figure>
+      <figure class="fav wide rv" style="--d:.1s"><img src="photos/burger-tots.jpg" alt="Burger with a basket of tots" loading="lazy" style="object-position:center 60%"><figcaption><b>Any burger · swap in tots</b><span>from $13</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec menu" id="menu">
+  <div class="wrap">
+    <div class="head rv">
+      <div><span class="hand kicker" style="color:var(--tomato)">the whole lineup</span><h2>Menu</h2></div>
+      <p>Prices may change. Call (352) 378-8135 for takeout.</p>
+    </div>
+    <div class="tabs rv" id="tabs"></div>
+    <div class="items" id="items"></div>
+  </div>
+</section>
+
+<section class="game" id="gameday">
+  <div class="ph rv" role="img" aria-label="The bar at Mom's OG with games on the TVs"></div>
+  <div class="tx rv" style="--d:.1s">
+    <span class="hand kicker">saturdays hit different</span>
+    <h2>Game day lives here.</h2>
+    <p>Screens all around the room, a big beer list, cocktails and Pickle-Backs. Come for kickoff and stay for the late game. The kitchen's open until 2.</p>
+    <div class="feats">
+      <div><b>Every game on</b><span>Multiple screens throughout</span></div>
+      <div><b>Daily deals</b><span>A different special every day</span></div>
+      <div><b>Breakfast to late night</b><span>7:30 AM to 2 AM, 7 days</span></div>
+      <div><b>Groups welcome</b><span>Reservations accepted</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="reviews">
+  <div class="wrap">
+    <div class="head rv"><div><span class="hand kicker">don't take our word for it</span><h2>What people say</h2></div></div>
+    <div class="revs">
+      <div class="rev rv"><span class="stars">★★★★★</span><q>The mac bowl for me was where it was at… I came in solo, but I had a blast.</q><cite>Joel B. · Google review</cite></div>
+      <div class="rev rv" style="--d:.1s"><span class="stars">★★★★★</span><q>Amazing wings, great vibe… Pickle-Backs were sublime!</q><cite>David M. · Google review</cite></div>
+      <div class="rev rv" style="--d:.2s"><span class="stars">★★★★★</span><q>One of the best places in Gainesville for a fulfilling meal!</q><cite>Google review</cite></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec visit" id="visit">
+  <div class="wrap vgrid">
+    <div class="vbox rv">
+      <span class="hand kicker">pull up a stool</span>
+      <h3 class="disp" style="font-size:clamp(2.6rem,6vw,4.4rem)">Come hang out.</h3>
+      <div class="row" style="margin-top:26px"><span class="lbl">Address</span><a class="big" href="https://www.google.com/maps/dir/?api=1&destination=Mom%27s+OG+1017+W+University+Ave+Gainesville+FL" target="_blank" rel="noopener">1017 W University Ave</a><p>Gainesville, FL 32601 · a short walk from campus</p></div>
+      <div class="row"><span class="lbl">Call for takeout</span><a class="big" href="tel:+13523788135">(352) 378-8135</a></div>
+      <div class="cta"><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Mom%27s+OG+1017+W+University+Ave+Gainesville+FL" target="_blank" rel="noopener">Directions</a><a class="btn ghost" href="https://www.facebook.com/momsog1017" target="_blank" rel="noopener">Facebook</a></div>
+    </div>
+    <div class="vbox rv" style="--d:.1s">
+      <h3 class="disp">Hours</h3>
+      <ul class="hours" id="hours"></ul>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© Mom's OG · 1017 W University Ave, Gainesville, FL</span><span>Preview site</span></div></footer>
+
+<script>
+// ticker
+const tk=["Open till 2 AM every night","Wings by the 5 or by the 50","Every game on","Breakfast from 7:30","Cold beer & Pickle-Backs","Daily deals"];
+document.getElementById('tk').innerHTML=[...tk,...tk,...tk,...tk].map(t=>`<span>${t}</span>`).join('');
+
+// header shadow
+const hdr=document.getElementById('hdr');
+addEventListener('scroll',()=>hdr.classList.toggle('sc',scrollY>10),{passive:true});
+
+// menu
+const P='photos/';
+const MENU={
+ "Burgers & Sandwiches":[
+  ["Mom's Burger","13","Homemade burger patty on a toasted bun.","","burger"],
+  ["Breakfast Burger","14","Breakfast and a burger in one.","Fan pick",""],
+  ["Jalapeño Bacon Cheddar Burger","14","Bacon, sharp cheddar and a jalapeño kick.","",""],
+  ["Chicken Tender Club","14","3 juicy tenders, bacon, provolone, lettuce, tomato and ranch on buttery Texas toast.","",""],
+  ["Chicken Parm Sandwich","14","Fried chicken breast, house-made marinara and melted provolone on Texas toast.","",""],
+  ["Buffalo Chicken Sandwich","13","Fried chicken tossed in buffalo with pepper jack on a toasted sesame bun.","",""],
+  ["Chicken Sandwich","13","Fried, grilled or blackened, with your choice of cheese on a sesame bun.","","chicken-sandwich"],
+  ["Veggie Burger","14","Served with fries or tots.","",""],
+  ["Mom's BLT","12","Lots of bacon, lettuce, tomato and mayo on your choice of bread.","",""],
+  ["Grilled Cheese & Soup","12","Buttery Texas toast, 4 slices of American, with tomato or chicken noodle soup.","",""]],
+ "Pub Favorites":[
+  ["Buffalo Chicken Bacon Mac Bowl","14","White cheddar mac 'n cheese, fried chicken, crispy bacon, hot sauce and ranch.","Must try",""],
+  ["Mom's Bowl","14","Homemade mashed potatoes, 5 boneless wings, brown onion gravy, corn and shredded cheese.","Signature",""],
+  ["Pub Style Fish & Chips","14","Beer-battered haddock with coleslaw, lemon and fries.","","fish-chips"],
+  ["Bangers & Mash","14","2 Irish sausages over Mom's mashed potatoes with onion gravy.","","bangers-mash"],
+  ["Shepherd's Pie","14","Ground lamb, carrots, peas and herbs under mashed potatoes and Parmesan.","",""]],
+ "Wings":[
+  ["5 Wings","9","Your choice of sauce.","",""],
+  ["10 Wings","16","Your choice of sauce.","",""],
+  ["20 Wings","30","Split them with a friend, or don't.","",""],
+  ["30 Wings","40","Game-day sized.","",""],
+  ["40 Wings","50","Feeds the crew.","",""],
+  ["50 Wings","60","The whole watch party.","Best value",""]],
+ "Appetizers":[
+  ["Zucchini Fries","12","Served with spicy ranch.","","zucchini-fries"],
+  ["Sweet Potato Waffle Fries","10.50","With house-made dill sauce.","",""],
+  ["8 Piece Mozzarella Sticks","12","","",""],
+  ["Chicken Finger Basket","12","4 breaded chicken fingers and fries with honey mustard.","",""],
+  ["Corn Nuggets","10.50","","",""],
+  ["Onion Rings","10.50","","",""],
+  ["Fry or Tot Basket","8","","",""]],
+ "Salads & Soups":[
+  ["Cobb Salad","16","Lettuce, tomato, cucumber, bacon, ham, hard-boiled egg, croutons and cheese.","",""],
+  ["Caesar Salad","13","Romaine in Mom's own Caesar, Parmesan and croutons. Add chicken.","",""],
+  ["House Salad","13","Lettuce, tomato, carrots, cucumber, black olives, croutons and cheese.","",""],
+  ["Side Caesar or House","7.50","","",""],
+  ["Tomato Soup","6","","",""]]
+};
+const tabs=document.getElementById('tabs'),items=document.getElementById('items');
+function show(cat){
+  [...tabs.children].forEach(b=>b.classList.toggle('on',b.textContent===cat));
+  items.innerHTML=MENU[cat].map(([n,p,d,tag,img])=>`<div class="item">${img?`<img src="${P+img}.jpg" alt="" loading="lazy">`:''}<div class="t"><div class="r"><h4>${n}${tag?`<span class="tag">${tag}</span>`:''}</h4><span class="pr">$${p}</span></div>${d?`<p>${d}</p>`:''}</div></div>`).join('');
+}
+Object.keys(MENU).forEach(c=>{const b=document.createElement('button');b.className='tab';b.textContent=c;b.onclick=()=>show(c);tabs.appendChild(b)});
+show("Burgers & Sandwiches");
+
+// hours + open status (America/New_York). Open 7:30 AM to 2 AM daily.
+const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const now=new Date(new Date().toLocaleString('en-US',{timeZone:'America/New_York'}));
+const d=now.getDay(), mins=now.getHours()*60+now.getMinutes();
+document.getElementById('hours').innerHTML=[1,2,3,4,5,6,0].map(i=>`<li class="${i===d?'today':''}"><span>${days[i]}</span><span>7:30 AM – 2:00 AM</span></li>`).join('');
+const open = mins>=450 || mins<120;
+document.getElementById('open').textContent = open ? (mins<120 ? 'Open now · until 2 AM' : 'Open now · until 2 AM tonight') : 'Closed · opens 7:30 AM';
+if(!open) document.getElementById('dot').classList.add('off');
+
+// reveals
+if('IntersectionObserver' in window){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.14,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+}else document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));
+</script>
+</body>
+</html>
